@@ -15,7 +15,6 @@ def IPSs_view(request):
             return HttpResponse(ips, 'application/json')
         else:
             IPSs_dto = l.get_IPSs()
-            print("EXPLOLTA AQUI")
             IPSs = serializers.serialize('json', IPSs_dto)
             return HttpResponse(IPSs, 'application/json')
     if request.method == 'POST':
