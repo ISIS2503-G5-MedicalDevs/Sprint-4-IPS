@@ -2,11 +2,11 @@ from ..models import IPS
 from django.db import models
 
 def get_IPSs():
-    ips = IPS.objects.all()
+    ips = IPS.objects.using('IPS').all()
     return ips
 
 def get_IPS(IPS_pk):
-    ips = IPS.objects.get(pk=IPS_pk)
+    ips = IPS.objects.using('IPS').get(pk=IPS_pk)
     return ips
 
 def create_IPS(Ips):
@@ -16,7 +16,7 @@ def create_IPS(Ips):
         ciudad = Ips["ciudad"],
         capacidad = Ips["capacidad"]
     )
-    ips.save()
+    ips.save(using='IPS')
     return ips
 
 def update_IPS(Ips_pk, Ips):
@@ -25,7 +25,7 @@ def update_IPS(Ips_pk, Ips):
     ips.direccion = Ips["direccion"]
     ips.ciudad = Ips["ciudad"]
     ips.capacidad = Ips["capacidad"]
-    ips.save()
+    ips.save(using='IPS')
     return ips
 
 def delete_IPS(Ips_pk):
