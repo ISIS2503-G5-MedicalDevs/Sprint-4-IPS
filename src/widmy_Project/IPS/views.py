@@ -33,7 +33,7 @@ def IPS_view(request, pk):
         ips = serializers.serialize('json', [IPS_dto,])
         return HttpResponse(ips, 'application/json')
     if request.method == 'DELETE':
-        IPS_dto = l.delete_IPS(pk, json.loads(request.body))
+        IPS_dto = l.delete_IPS(pk)
         ips = serializers.serialize('json', [IPS_dto,])
         return HttpResponse(ips, 'application/json')
 
