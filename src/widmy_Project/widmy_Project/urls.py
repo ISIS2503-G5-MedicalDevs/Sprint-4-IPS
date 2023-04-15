@@ -21,8 +21,8 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('IPS/',include('IPS.urls')),
-    path('health-check/',views.healthCheck)
-    #,path('HistoriaClinica', include('HistoriaClinica.urls'))
+    path('health-check/',views.healthCheck),
+    path('HistoriaClinica', include('HistoriaClinica.urls'))
 ]
 
 #Descomentar el path de historias clinicas cuando se cree el modulo de historias clinicas
