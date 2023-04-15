@@ -81,7 +81,7 @@ DATABASES = {
         'NAME': 'sprint_db',
         'USER': 'db_user',
         'PASSWORD': 'password',
-        'HOST': '',    #Esta parte hay que cambiarla dependiendo de la IP que salga
+        'HOST': '10.128.0.5',
         'PORT': '5432'
     },
     'HistoriaClinica': {
@@ -89,7 +89,7 @@ DATABASES = {
         'NAME': 'sprint_db',
         'USER': 'db_user',
         'PASSWORD': 'password',
-        'HOST': '',    #Esta parte hay que cambiarla dependiendo de la IP que salga
+        'HOST': '10.128.0.4',    
         'PORT': '5432'
     }
 }
