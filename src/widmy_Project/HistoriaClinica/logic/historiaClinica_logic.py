@@ -5,11 +5,11 @@ from django.db import models
 
 def get_all_HistoriaClinica():
 	historiaclinica = HistoriaClinica.objects.using('HistoriaClinica').all()
-	return HistoriaClinica
+	return historiaclinica
 
 def get_HistoriaClinica(historia_pk):
 	historiaclinica = HistoriaClinica.objects.using('HistoriaClinica').get(pk=historia_pk)
-	return HistoriaClinica
+	return historiaclinica
 
 def create_HistoriaClinica(hc):
 	historiaclinica = HistoriaClinica(
