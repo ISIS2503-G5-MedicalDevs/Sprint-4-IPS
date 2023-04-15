@@ -76,19 +76,19 @@ WSGI_APPLICATION = 'widmy_Project.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'IPS': {
+    'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'sprint_db',
-        'USER': 'db_user',
-        'PASSWORD': 'password',
+        'NAME': 'ips_db',
+        'USER': 'ips_user',
+        'PASSWORD': 'isis2503',
         'HOST': '10.128.0.5',
         'PORT': '5432'
     },
     'HistoriaClinica': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'sprint_db',
-        'USER': 'db_user',
-        'PASSWORD': 'password',
+        'NAME': 'historias_db',
+        'USER': 'historias_user',
+        'PASSWORD': 'isis2503',
         'HOST': '10.128.0.4',    
         'PORT': '5432'
     }
