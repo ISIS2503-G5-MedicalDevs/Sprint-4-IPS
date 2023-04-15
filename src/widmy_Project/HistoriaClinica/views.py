@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .logic import HistoriaClinica_logic as l
+from .logic import historiaClinica_logic as l
 from django.http import HttpResponse
 from django.core import serializers
 import json
