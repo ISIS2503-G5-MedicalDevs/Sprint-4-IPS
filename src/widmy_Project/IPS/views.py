@@ -6,11 +6,13 @@ import json
 from django.views.decorators.csrf import csrf_exempt, login_required
 from widmy_Project import getRole
 
+rolesValidos = ["Administrador", "AdministradorSistema"]
+
 @csrf_exempt
 @login_required
 def IPSs_view(request):
     role = getRole(request)
-    if role == "Administrador":
+    if role in rolesValidos:
         if request.method=='GET':
             id = request.GET.get("id",None)
             if id:
@@ -29,18 +31,22 @@ def IPSs_view(request):
         return HttpResponse("Unauthorized User")
 
 @csrf_exempt
+@login_required
 def IPS_view(request, pk):
-    if request.method == 'GET':
-        IPS_dto = l.get_IPS(pk)
-        ips = serializers.serialize('json', [IPS_dto,])
-        return HttpResponse(ips, 'application/json')
-    if request.method == 'PUT':
-        IPS_dto = l.update_IPS(pk, json.loads(request.body))
-        ips = serializers.serialize('json', [IPS_dto,])
-        return HttpResponse(ips, 'application/json')
-    if request.method == 'DELETE':
-        IPS_dto = l.delete_IPS(pk)
-        ips = serializers.serialize('json', [IPS_dto,])
-        return HttpResponse(ips, 'application/json')
-
+    role = getRole(request)
+    if role in rolesValidos:
+        if request.method == 'GET':
+            IPS_dto = l.get_IPS(pk)
+            ips = serializers.serialize('json', [IPS_dto,])
+            return HttpResponse(ips, 'application/json')
+        if request.method == 'PUT':
+            IPS_dto = l.update_IPS(pk, json.loads(request.body))
+            ips = serializers.serialize('json', [IPS_dto,])
+            return HttpResponse(ips, 'application/json')
+        if request.method == 'DELETE':
+            IPS_dto = l.delete_IPS(pk)
+            ips = serializers.serialize('json', [IPS_dto,])
+            return HttpResponse(ips, 'application/json')
+    else:
+        return HttpResponse("Unauthorized User")
 # Create your views here.
