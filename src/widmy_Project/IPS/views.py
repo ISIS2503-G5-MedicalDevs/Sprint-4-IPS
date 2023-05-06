@@ -3,7 +3,8 @@ from .logic import IPS_logic as l
 from django.http import HttpResponse
 from django.core import serializers
 import json
-from django.views.decorators.csrf import csrf_exempt, login_required
+from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth.decorators import login_required
 from widmy_Project import getRole
 
 rolesValidos = ["Administrador", "AdministradorSistema"]
