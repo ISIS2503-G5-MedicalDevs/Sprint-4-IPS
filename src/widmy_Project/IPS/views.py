@@ -5,7 +5,7 @@ from django.core import serializers
 import json
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
-from widmy_Project import getRole
+from widmy_Project.auth0backend import getRole
 
 rolesValidos = ["Administrador", "AdministradorSistema"]
 
