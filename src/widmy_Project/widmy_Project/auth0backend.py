@@ -3,7 +3,7 @@ from social_core.backends.oauth import BaseOAuth2
 class Auth0(BaseOAuth2): 
     """Auth0 OAuth authentication backend""" 
     name = 'auth0' 
-    SCOPE_SEPARATOR = ''
+    SCOPE_SEPARATOR = ' '
     ACCESS_TOKEN_METHOD = 'POST' 
     EXTRA_DATA = [ 
         ('picture', 'picture') 
