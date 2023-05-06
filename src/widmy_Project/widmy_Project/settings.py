@@ -83,7 +83,7 @@ DATABASES = {
         'NAME': 'ips_db',
         'USER': 'ips_user',
         'PASSWORD': 'isis2503',
-        'HOST': '10.128.0.5',
+        'HOST': '10.128.0.14',
         'PORT': '5432'
     },
     'HistoriaClinica': {
@@ -91,7 +91,7 @@ DATABASES = {
         'NAME': 'historias_db',
         'USER': 'historias_user',
         'PASSWORD': 'isis2503',
-        'HOST': '10.128.0.4',    
+        'HOST': '10.128.0.15',    
         'PORT': '5432'
     }
 }
