@@ -4,5 +4,6 @@ from . import views
 
 urlpatterns = [
     path('',views.IPSs_view, name='IPSs_view'),
-    path('<int:pk>', views.IPS_view, name='IPS_view')
+    path('<int:pk>', views.IPS_view, name='IPS_view'),
+    path('test', views.IPS_test, name= 'IPS_test')
 ]
