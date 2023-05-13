@@ -1,11 +1,12 @@
 from django.shortcuts import render
 from .logic import IPS_logic as l
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseBadRequest
 from django.core import serializers
 import json
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
 from widmy_Project.auth0backend import getRole
+import widmy_Project.validate as vl
 
 rolesValidos = ["Administrador", "AdministradorSistema"]
 
@@ -41,6 +42,8 @@ def IPS_view(request, pk):
             ips = serializers.serialize('json', [IPS_dto,])
             return HttpResponse(ips, 'application/json')
         if request.method == 'PUT':
+            if not(vl.validar(json.loads(request.body))):
+                return HttpResponseBadRequest(HttpResponse("Error, invalid entry for update"))
             IPS_dto = l.update_IPS(pk, json.loads(request.body))
             ips = serializers.serialize('json', [IPS_dto,])
             return HttpResponse(ips, 'application/json')
