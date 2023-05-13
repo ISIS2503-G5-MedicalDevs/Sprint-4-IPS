@@ -35,9 +35,7 @@ def getRole(request):
     accessToken = auth0user.extra_data['access_token'] 
     url = "https://isis2503-john-suarez20.us.auth0.com/userinfo" 
     headers = {'authorization': 'Bearer ' + accessToken}
-    print(accessToken)
     resp = requests.get(url, headers=headers)
-    print(resp.json())
     userinfo = resp.json()
     role = userinfo['isis2503-john-suarez20.us.com/role']
     return (role)
