@@ -56,3 +56,10 @@ def HistoriaClinica_view(request, pk):
             return HttpResponse(hc, 'application/json')
     else:
         return HttpResponse("Unauthorized User")
+
+@csrf_exempt
+def HistoriaClinica_test(request):
+    if request.method == 'POST':
+        hc_dto = l.create_HistoriaClinica(json.loads(request.body))
+        hc = serializers.serialize('json', [hc_dto, ])
+        return HttpResponse(hc, 'application/json')

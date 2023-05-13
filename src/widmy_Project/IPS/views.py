@@ -37,8 +37,8 @@ def IPSs_view(request):
 @csrf_exempt
 @login_required
 def IPS_view(request, pk):
-    #role = getRole(request)
-    if True:
+    role = getRole(request)
+    if role in rolesValidos:
         if request.method == 'GET':
             IPS_dto = l.get_IPS(pk)
             ips = serializers.serialize('json', [IPS_dto,])
@@ -55,4 +55,17 @@ def IPS_view(request, pk):
             return HttpResponse(ips, 'application/json')
     else:
         return HttpResponse("Unauthorized User")
+
+@csrf_exempt
+def IPS_test(request):
+    if request.method == 'POST':
+        IPS_dto = l.create_IPS(json.loads(request.body))
+        ips = serializers.serialize('json', [IPS_dto, ])
+        return HttpResponse(ips, 'application/json')
+    if request.method == 'PUT':
+        if not(vl.validar(json.loads(request.body))):
+                return HttpResponseBadRequest(HttpResponse("Error, invalid entry for update"))
+        IPS_dto = l.update_IPS(1, json.loads(request.body))
+        ips = serializers.serialize('json', [IPS_dto,])
+        return HttpResponse(ips, 'application/json')
 # Create your views here.
