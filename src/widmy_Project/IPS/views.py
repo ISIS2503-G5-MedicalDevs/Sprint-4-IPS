@@ -35,8 +35,8 @@ def IPSs_view(request):
 @csrf_exempt
 @login_required
 def IPS_view(request, pk):
-    role = getRole(request)
-    if role in rolesValidos:
+    #role = getRole(request)
+    if True:
         if request.method == 'GET':
             IPS_dto = l.get_IPS(pk)
             ips = serializers.serialize('json', [IPS_dto,])
