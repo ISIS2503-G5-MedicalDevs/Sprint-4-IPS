@@ -13,6 +13,12 @@ rolesValidos = ["Administrador", "AdministradorSistema"]
 @csrf_exempt
 @login_required
 def IPSs_view(request):
+    
+    if request.method == 'POST':
+            IPS_dto = l.create_IPS(json.loads(request.body))
+            ips = serializers.serialize('json', [IPS_dto, ])
+            return HttpResponse(ips, 'application/json')
+    
     role = getRole(request)
     if role in rolesValidos:
         if request.method=='GET':
@@ -25,10 +31,6 @@ def IPSs_view(request):
                 IPSs_dto = l.get_IPSs()
                 IPSs = serializers.serialize('json', IPSs_dto)
                 return HttpResponse(IPSs, 'application/json')
-        if request.method == 'POST':
-            IPS_dto = l.create_IPS(json.loads(request.body))
-            ips = serializers.serialize('json', [IPS_dto, ])
-            return HttpResponse(ips, 'application/json')
     else:
         return HttpResponse("Unauthorized User")
 
