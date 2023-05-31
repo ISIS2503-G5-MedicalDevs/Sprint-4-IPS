@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'IPS',
-    'HistoriaClinica',
     'social_django',
 ]
 
@@ -84,14 +83,6 @@ DATABASES = {
         'USER': 'ips_user',
         'PASSWORD': 'isis2503',
         'HOST': '10.128.0.14',
-        'PORT': '5432'
-    },
-    'HistoriaClinica': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'historias_db',
-        'USER': 'historias_user',
-        'PASSWORD': 'isis2503',
-        'HOST': '10.128.0.15',    
         'PORT': '5432'
     }
 }

@@ -68,4 +68,11 @@ def IPS_test(request):
         IPS_dto = l.update_IPS(1, json.loads(request.body))
         ips = serializers.serialize('json', [IPS_dto,])
         return HttpResponse(ips, 'application/json')
+
+@csrf_exempt
+def IPS_test_2(request):
+    if request.mehtod == 'PUT':
+        IPS_dto = l.update_IPS(1, json.loads(request.body))
+        ips = serializers.serialize('json', [IPS_dto,])
+        return HttpResponse(ips, 'application/json')
 # Create your views here.
