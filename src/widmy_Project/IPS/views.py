@@ -68,6 +68,10 @@ def IPS_test(request):
         IPS_dto = l.update_IPS(1, json.loads(request.body))
         ips = serializers.serialize('json', [IPS_dto,])
         return HttpResponse(ips, 'application/json')
+    if request.method == 'GET':
+        IPSs_dto = l.get_IPSs()
+        IPSs = serializers.serialize('json', IPSs_dto)
+        return HttpResponse(IPSs, 'application/json')
 
 @csrf_exempt
 def IPS_test_2(request):
