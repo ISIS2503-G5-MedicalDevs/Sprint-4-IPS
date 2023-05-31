@@ -82,7 +82,7 @@ DATABASES = {
         'NAME': 'ips_db',
         'USER': 'ips_user',
         'PASSWORD': 'isis2503',
-        'HOST': '10.128.0.14',
+        'HOST': '10.128.0.21',
         'PORT': '5432'
     }
 }
