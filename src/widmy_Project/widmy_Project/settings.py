@@ -133,11 +133,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_URL = "/login/auth0" 
 LOGIN_REDIRECT_URL = "/" 
-LOGOUT_REDIRECT_URL = "https://isis2503-john-suarez20.us.auth0.com/v2/logout?returnTo=http%3A%2F%2F34.111.148.224/" 
+LOGOUT_REDIRECT_URL = "https://isis2503-msgalvan1207.us.auth0.com/v2/logout?returnTo=http%3A%2F%2F104.154.175.114:8080/" 
 SOCIAL_AUTH_TRAILING_SLASH = False # Remove end slash from routes 
-SOCIAL_AUTH_AUTH0_DOMAIN = 'isis2503-john-suarez20.us.auth0.com' 
-SOCIAL_AUTH_AUTH0_KEY = 'BLsbaxyL9hAavZWq9A2ncuiJyamukDnn' 
-SOCIAL_AUTH_AUTH0_SECRET = 'oR6s3Yokpy8Ba3b0djr7Bzdk8gzHoP_uhXePZLiba8ed_27KJq7xeySbK0ViXHCn' 
+SOCIAL_AUTH_AUTH0_DOMAIN = 'isis2503-msgalvan1207.us.auth0.com' 
+SOCIAL_AUTH_AUTH0_KEY = 'Fv9kviqG997Q8I1xcfkp9s8TIR4Ujdd7' 
+SOCIAL_AUTH_AUTH0_SECRET = 'Q8RVdk_oBLEH7SbKpDQ0unGp2zlUbtY4C8Aar1iZt8oMHrHLZc-Hp3vnDYx4pdVI' 
 SOCIAL_AUTH_AUTH0_SCOPE = [ 
     'openid', 
     'profile',
