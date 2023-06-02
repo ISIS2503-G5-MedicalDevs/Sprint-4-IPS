@@ -11,6 +11,7 @@ from bson.objectid import ObjectId
 
 @api_view(["GET","POST"])
 def HistoriasClinicas_view(request):
+    print("entro")
     client = MongoClient(settings.MONGO_CLI)
     db = client.hc_db
     hcs = db['HistoriasClinicas']
