@@ -1,8 +1,8 @@
 from django.http import JsonResponse
 from pymongo import MongoClient
 import datetime
-from rest_framework_decorators import api_view, renderer_classes
-from rset_framework_parsers import JSONParser
+from rest_framework.decorators import api_view, renderer_classes
+from rset_framework.parsers import JSONParser
 from django.conf import settings
 from bson.objectid import ObjectId
 
