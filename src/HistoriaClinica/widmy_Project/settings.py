@@ -38,8 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'IPS',
-    'social_django',
+    'HistoriaClinica',
 ]
 
 MIDDLEWARE = [
@@ -76,16 +75,16 @@ WSGI_APPLICATION = 'widmy_Project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ips_db',
-        'USER': 'ips_user',
-        'PASSWORD': 'isis2503',
-        'HOST': '10.128.0.21',
-        'PORT': '5432'
-    }
-}
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#        'NAME': 'ips_db',
+#        'USER': 'ips_user',
+#        'PASSWORD': 'isis2503',
+#        'HOST': '10.128.0.21',
+#        'PORT': '5432'
+#    }
+#}
 
 
 # Password validation
@@ -131,20 +130,4 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_URL = "/login/auth0" 
-LOGIN_REDIRECT_URL = "/" 
-LOGOUT_REDIRECT_URL = "https://isis2503-msgalvan1207.us.auth0.com/v2/logout?returnTo=http%3A%2F%2F35.232.164.59:8000/" 
-SOCIAL_AUTH_TRAILING_SLASH = False # Remove end slash from routes 
-SOCIAL_AUTH_AUTH0_DOMAIN = 'isis2503-msgalvan1207.us.auth0.com' 
-SOCIAL_AUTH_AUTH0_KEY = 'Fv9kviqG997Q8I1xcfkp9s8TIR4Ujdd7' 
-SOCIAL_AUTH_AUTH0_SECRET = 'Q8RVdk_oBLEH7SbKpDQ0unGp2zlUbtY4C8Aar1iZt8oMHrHLZc-Hp3vnDYx4pdVI' 
-SOCIAL_AUTH_AUTH0_SCOPE = [ 
-    'openid', 
-    'profile',
-    'email',
-    'role', 
-    ] 
-AUTHENTICATION_BACKENDS = { 
-    'widmy_Project.auth0backend.Auth0', 
-    'django.contrib.auth.backends.ModelBackend', 
-    }
+MONGO_CLI = os.environ['MONGO_CLIENT']

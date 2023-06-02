@@ -20,10 +20,8 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('IPS/',include('IPS.urls')),
+    path('HistoriaClinica/',include('IPS.urls')),
     path('health-check/',views.healthCheck),
-    path(r'', include('django.contrib.auth.urls')),
-    path(r'', include('social_django.urls')),
 ]
 
 #Descomentar el path de historias clinicas cuando se cree el modulo de historias clinicas
